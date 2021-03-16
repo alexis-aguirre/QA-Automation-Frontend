@@ -1,5 +1,6 @@
 import ProductsPage from "../pages/ProductsPage";
 import LoginPage from "../pages/LoginPage";
+import ShoppingCartPage from "../pages/ShoppingCartPage";
 
 import { CREDENTIALS } from "../data/Constants";
 
@@ -15,4 +16,10 @@ test("Logout from products page", async (t) => {
   await t.click(ProductsPage.logoutButton);
 
   await t.expect(LoginPage.usernameField.exist).ok;
+});
+
+test("Navigate to shopping cart", async (t) => {
+  await t.click(ProductsPage.shoppingCartButton);
+
+  await t.expect(ShoppingCartPage.titleField.exist).ok;
 });
