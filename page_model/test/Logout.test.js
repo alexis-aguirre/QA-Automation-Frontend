@@ -15,11 +15,11 @@ test("Logout from products page", async (t) => {
   await t.click(ProductsPage.burgerMenu);
   await t.click(ProductsPage.logoutButton);
 
-  await t.expect(LoginPage.usernameField.exist).ok;
+  await t.expect(LoginPage.usernameField.exists).ok();
 });
 
 test("Navigate to shopping cart", async (t) => {
   await t.click(ProductsPage.shoppingCartButton);
 
-  await t.expect(ShoppingCartPage.titleField.exist).ok;
+  await t.expect(ShoppingCartPage.titleField.exists).ok();
 });

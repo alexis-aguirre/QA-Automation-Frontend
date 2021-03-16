@@ -10,7 +10,7 @@ test("Users can login using valid credentials", async (t) => {
     CREDENTIALS.VALID_USER.USERNAME,
     CREDENTIALS.VALID_USER.PASSWORD
   );
-  await t.expect(ProductsPage.title.exist).ok;
+  await t.expect(ProductsPage.title.exists).ok();
 });
 
 test("Users can login using invalid credentials", async (t) => {
@@ -18,5 +18,5 @@ test("Users can login using invalid credentials", async (t) => {
     CREDENTIALS.INVALID_USER.USERNAME,
     CREDENTIALS.INVALID_USER.PASSWORD
   );
-  await t.expect(LoginPage.errorMessage.exist).ok;
+  await t.expect(LoginPage.errorMessage.exists).ok();
 });

@@ -16,7 +16,7 @@ class ProductsPage {
   async addToCart(index) {
     const element = this.productList
       .child(".inventory_item")
-      .nth(index - 1)
+      .nth(index)
       .child(".pricebar")
       .child("button.btn_primary.btn_inventory");
 

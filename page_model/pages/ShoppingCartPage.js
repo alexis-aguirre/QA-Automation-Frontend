@@ -4,10 +4,13 @@ class ShoppingCartPage {
   constructor() {
     this.titleField = Selector(".subheader");
     this.articleList = Selector(".cart_list");
+    this.currentArticle = null;
   }
 
-  async GetNthElement(index) {
-    return this.articleList.child(".cart_item").nth(index);
+  async SetCurrentArticle(index) {
+    this.currentArticle = Selector("button.btn_secondary.cart_button").nth(
+      index
+    );
   }
 }
 

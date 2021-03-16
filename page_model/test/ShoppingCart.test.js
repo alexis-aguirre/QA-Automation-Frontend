@@ -14,9 +14,23 @@ fixture("Shopping Cart").page`https://www.saucedemo.com`.beforeEach(
 );
 
 test("Add a single item to cart", async (t) => {
-  await ProductsPage.addToCart(2);
+  await ProductsPage.addToCart(0);
   await t.click(ProductsPage.shoppingCartButton);
 
-  await t.expect(ShoppingCartPage.titleField.exist).ok;
-  await t.expect(ShoppingCartPage.GetNthElement(0)).ok;
+  await t.expect(ShoppingCartPage.titleField.exists).ok();
+  ShoppingCartPage.SetCurrentArticle(0);
+
+  await t.expect(ShoppingCartPage.currentArticle.exists).ok();
+});
+
+test("Add multiple items to cart", async (t) => {
+  await ProductsPage.addToCart(0);
+  await ProductsPage.addToCart(2);
+  await ProductsPage.addToCart(4);
+  await t.click(ProductsPage.shoppingCartButton);
+
+  for (let index = 0; index < 3; index++) {
+    await ShoppingCartPage.SetCurrentArticle(index);
+    await t.expect(ShoppingCartPage.currentArticle.exists).ok();
+  }
 });
