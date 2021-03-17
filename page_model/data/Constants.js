@@ -12,3 +12,15 @@ export const CREDENTIALS = {
     PASSWORD: process.env.INVALID_PASSWORD,
   },
 };
+
+export const MAIL_ADDRESS = {
+  FIRSTNAME: process.env.FIRST_NAME,
+  LASTNAME: process.env.LAST_NAME,
+  ZIPCODE: process.env.ZIP_CODE,
+};
+
+export const BUYING_ITEMS = {
+  ITEM01: process.env.ITEM_01,
+  ITEM02: process.env.ITEM_02,
+  ITEM03: process.env.ITEM_03,
+};

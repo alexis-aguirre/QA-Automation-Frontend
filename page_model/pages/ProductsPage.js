@@ -7,6 +7,8 @@ class ProductsPage {
     this.logoutButton = Selector("a#logout_sidebar_link.bm-item.menu-item");
     this.shoppingCartButton = Selector("a.shopping_cart_link.fa-layers.fa-fw");
     this.productList = Selector(".inventory_list");
+
+    this.checkoutButton = Selector("a.btn_action.checkout_button");
   }
 
   async logout() {
