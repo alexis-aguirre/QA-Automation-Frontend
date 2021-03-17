@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-all": "testcafe firefox ./page_model/test/**"
+    "test-all": "testcafe firefox ./page_model/test/",
+    "test-all-multibrowser": "testcafe firefox,opera,safari ./page_model/test/"
   },
   "author": "",
   "license": "ISC",
