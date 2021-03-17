@@ -5,7 +5,7 @@ import { CREDENTIALS, BUYING_ITEMS } from "../data/Constants";
 import OverviewPage from "../pages/OverviewPage";
 import CheckoutPage from "../pages/CheckoutPage";
 
-fixture("Checkout page").page`https://www.saucedemo.com`.beforeEach(
+fixture("Overview page").page`https://www.saucedemo.com`.beforeEach(
   async (t) => {
     await LoginPage.submitLoginForm(
       CREDENTIALS.VALID_USER.USERNAME,
@@ -21,7 +21,7 @@ fixture("Checkout page").page`https://www.saucedemo.com`.beforeEach(
   }
 );
 
-test("Validate items in overview page", async (t) => {
+test("Final order items", async (t) => {
   OverviewPage.setCurrentCartItem(0);
   await t
     .expect(OverviewPage.getCurrentCartItemTitle().innerText)

@@ -19,14 +19,14 @@ fixture("Checkout page").page`https://www.saucedemo.com`.beforeEach(
   }
 );
 
-test("Continue buying without zip code", async (t) => {
+test("Continue with missing mail information", async (t) => {
   await t.expect(CheckoutPage.titleField.exists).ok();
   await t.click(CheckoutPage.continueButton);
 
   await t.expect(CheckoutPage.errorMessage.exists).ok();
 });
 
-test("Continue buying with user data", async (t) => {
+test("Fill user information", async (t) => {
   await t.expect(CheckoutPage.titleField.exists).ok();
 
   await CheckoutPage.fillCheckoutForm();

@@ -4,7 +4,7 @@ import ShoppingCartPage from "../pages/ShoppingCartPage";
 
 import { CREDENTIALS } from "../data/Constants";
 
-fixture("Shopping Cart").page`https://www.saucedemo.com`.beforeEach(
+fixture("Shopping Cart Page").page`https://www.saucedemo.com`.beforeEach(
   async (t) => {
     await LoginPage.submitLoginForm(
       CREDENTIALS.VALID_USER.USERNAME,
@@ -13,7 +13,7 @@ fixture("Shopping Cart").page`https://www.saucedemo.com`.beforeEach(
   }
 );
 
-test("Add a single item to cart", async (t) => {
+test("Add a single item to the shopping cart", async (t) => {
   await ProductsPage.addToCart(0);
   await t.click(ProductsPage.shoppingCartButton);
 
@@ -23,7 +23,7 @@ test("Add a single item to cart", async (t) => {
   await t.expect(ShoppingCartPage.currentArticle.exists).ok();
 });
 
-test("Add multiple items to cart", async (t) => {
+test("Add multiple items to shopping cart", async (t) => {
   await ProductsPage.addToCart(0);
   await ProductsPage.addToCart(2);
   await ProductsPage.addToCart(4);
