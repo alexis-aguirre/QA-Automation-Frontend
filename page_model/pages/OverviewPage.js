@@ -11,7 +11,14 @@ class OverviewPage {
   }
 
   setCurrentCartItem(index) {
-    this.currentCartItem = Selector("div.cart_item");
+    this.currentCartItem = Selector("div.cart_item").nth(index);
+  }
+
+  getCurrentCartItemTitle() {
+    return this.currentCartItem
+      .child("div.cart_item_label")
+      .child("a")
+      .child("div");
   }
 }
 
